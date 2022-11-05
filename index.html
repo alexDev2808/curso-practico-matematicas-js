@@ -4,21 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Taller Matematicas JS</title>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <h1>Taller de Matematicas con JavaScript</h1>
-    <p>Aprende a trabajar con Matematicas usando codigo JavaScript</p>
+    <nav class="nav container">
+        <figure class="navLogo">
+            <img src="./logoFinal.png" alt="Logo AlexDev">
+        </figure>
+        <figure class="navMenuIcon">
+            <img src="./menu-outline.svg" alt="Menu Icon">
+        </figure>
+        <ul class="navMenu container inactive">
+            <li><a href="./index.html">Inicio <span>></span></a></li>
+            <li><a href="./figuras/math.html">Formulas basicas <span>></span></a></li>
+            <li><a href="./descuentos/descuentos.html">Porcentajes y descuentos <span>></span></a></li>
+            <li><a href="./estadistica/platzimath.html">Estadistica basica <span>></span></a></li>
+            <li><a href="./salarios/salarios.html">Analisis Salarial <span>></span></a></li>
+            <hr>
+            <li class="social"><a href="https://github.com/">GitHub</a><ion-icon class="ionicon" name="logo-octocat"></ion-icon></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <h1 class="h1">Taller de Matematicas con JavaScript</h1>
+    </header>
+    
+    <section class="info container">
+        <p>Aprende a trabajar con Matematicas usando codigo JavaScript</p>
+    </section>
+    <main class="main container">
 
-    <ul>
-        <li><a href="./math.html">Formulas basicas</a></li>
-        <li><a href="./descuentos.html">Porcentajes y descuentos</a></li>
-        <li><a href="./platzimath.html">Estadistica basica</a></li>
-        <li><a href="./salarios.html">Analisis Salarial</a></li>
-    </ul>
+        <ul class="main__menu">
+            <li><a href="./math.html">Formulas basicas <ion-icon name="arrow-forward-circle-outline"></ion-icon></a></li>
+            <li><a href="./descuentos.html">Porcentajes y descuentos <ion-icon name="arrow-forward-circle-outline"></ion-icon></a></li>
+            <li><a href="./platzimath.html">Estadistica basica <ion-icon name="arrow-forward-circle-outline"></ion-icon></a></li>
+            <li><a href="./salarios.html">Analisis Salarial <ion-icon name="arrow-forward-circle-outline"></ion-icon></a></li>
+        </ul>
+    </main>
+    
 
 
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
