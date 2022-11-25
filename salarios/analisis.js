@@ -60,3 +60,19 @@ for (let persona of salarios) {
 
 
 console.log(empresas);
+
+// Salarios Empresariales
+// Calcular la mediana de una empresa
+
+function medianaEmpresaAño( nombreEmpresa, añoEmpresa ){
+    if(!empresas[nombreEmpresa]){
+        return console.warn("La empresa no existe!")
+    }
+    if(!empresas[nombreEmpresa][añoEmpresa]){
+        return console.warn("El año especificado no existe!")
+    }
+
+    const medianaEmpresa = PlatziMath.calcularMediana(empresas[nombreEmpresa][añoEmpresa]);
+
+    console.log("La mediana es: ", medianaEmpresa);
+}
