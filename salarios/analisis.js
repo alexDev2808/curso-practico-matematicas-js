@@ -72,7 +72,41 @@ function medianaEmpresaAño( nombreEmpresa, añoEmpresa ){
         return console.warn("El año especificado no existe!")
     }
 
-    const medianaEmpresa = PlatziMath.calcularMediana(empresas[nombreEmpresa][añoEmpresa]);
+    return PlatziMath.calcularMediana(empresas[nombreEmpresa][añoEmpresa]);
 
-    console.log("La mediana es: ", medianaEmpresa);
 }
+
+
+// Proyeccion de salarios por empresas
+
+function proyeccionPorEmpresa( nombre ){
+    if(!empresas[nombre]){
+        return console.warn("La empresa no existe")
+    }
+
+    const empresaYears = Object.keys(empresas[nombre]);
+    const listaMedianaYears = empresaYears.map((year) => {
+        return medianaEmpresaAño(nombre, year)
+    })
+
+    let porcentajesCrecimiento = [];
+
+    for(let i = 1; i < listaMedianaYears.length; i++){
+        const salarioActual = listaMedianaYears[i];
+        const salarioPasado = listaMedianaYears[i - 1];
+        const crecimiento = salarioActual - salarioPasado;
+        const porcentajeCrecimiento = crecimiento / salarioPasado;
+        porcentajesCrecimiento.push(porcentajeCrecimiento)
+    }
+
+    const medianaPorcentajesCrecimiento = PlatziMath.calcularMediana(porcentajesCrecimiento)
+
+    const ultimaMediana = listaMedianaYears[listaMedianaYears.length - 1];
+    const aumento = ultimaMediana * medianaPorcentajesCrecimiento;
+    const nuevaMediana = ultimaMediana + aumento;
+
+    console.log(nuevaMediana);
+    
+    return nuevaMediana;
+}
+
