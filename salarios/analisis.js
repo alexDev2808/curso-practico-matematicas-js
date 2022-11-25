@@ -110,3 +110,21 @@ function proyeccionPorEmpresa( nombre ){
     return nuevaMediana;
 }
 
+// Analisis General
+
+function medianaGeneral(){
+    const listaMedianas = salarios.map(persona => medianaPorPersona(persona.name));
+    const mediana = PlatziMath.calcularMediana(listaMedianas)
+    return mediana
+}
+
+function medianaTop10(){
+    const listaMedianas = salarios.map(persona => medianaPorPersona(persona.name));
+    const medianasOrdenadas = PlatziMath.ordenarLista(listaMedianas);
+
+    const cantidad = listaMedianas.length / 10;
+
+    const top10 = medianasOrdenadas.slice(medianasOrdenadas.length - cantidad);
+
+    return PlatziMath.calcularMediana(top10);
+}
