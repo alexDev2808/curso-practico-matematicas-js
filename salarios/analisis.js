@@ -38,3 +38,25 @@ function proyeccionPorPersona(nombrePersona){{
     
     return nuevoSalario;
  }}
+
+
+//  Analisis Empresarial
+
+const empresas = {};
+
+for (let persona of salarios) {
+    for (const trabajo of persona.trabajos) {
+        if(!empresas[trabajo.empresa]){
+            empresas[trabajo.empresa] = {};
+        }
+
+        if(!empresas[trabajo.empresa][trabajo.year]){
+            empresas[trabajo.empresa][trabajo.year] = []
+        }
+
+        empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
+    }
+}
+
+
+console.log(empresas);
